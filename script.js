@@ -28,3 +28,7 @@ function showProjects() {
     col2.style.display = "none";
   }
 }
+
+function webPDF() {
+  alert("hello world")
+}
