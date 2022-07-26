@@ -4,6 +4,8 @@ const col2 = document.getElementById("col2");
 const col12 = document.getElementById("col12");
 const col22 = document.getElementById("col22");
 
+const width = document.getElementById("getwidth");
+
 function goGithub() {
   window.location.href = "https://github.com/heyitsM"
 }
@@ -37,5 +39,5 @@ function showProjects() {
 }
 
 function webPDF() {
-  alert("hello world")
+  alert(width.clientWidth)
 }
