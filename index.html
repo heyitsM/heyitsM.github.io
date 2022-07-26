@@ -13,21 +13,27 @@
     <link rel="icon" href = "images/portfolio_website.svg"
   </head>
   <body>
-    <div class = "card border-dark">
+    <div class = "card border-dark card_change">
       <div class="card-body">
         <div id="toolbar" class="container px-4">
           <div class="row gx-5 align-items-center">
+            <div class="col-1">
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="switch" onClick="switchLightMode()">
+                <label class="form-check-label" for="switch">Dark Mode</label>
+              </div>
+            </div>
             <div class="col-5" style="text-align:center">
-              <h1>Hi, I'm Emily</h1>
+              <h1 id="h1title">Hi, I'm Emily</h1>
             </div>
             <div class="col-2">
-              <button class="btn btn-outline-dark" type="button" id="github" onclick="goGithub()">github</button>
+              <button class="btn btn-outline-dark button_change" type="button" id="github" onclick="goGithub()">github</button>
             </div>
             <div class="col-2">
-              <button class="btn btn-outline-dark" type="button" id="linkedin" onclick="goLinkedin()">linkedin</button>
+              <button class="btn btn-outline-dark button_change" type="button" id="linkedin" onclick="goLinkedin()">linkedin</button>
             </div>
             <div class="col-2">
-              <button class="btn btn-outline-dark" type="button" id="email" onclick = "goEmail()">email me</button>
+              <button class="btn btn-outline-dark button_change" type="button" id="email" onclick = "goEmail()">email me</button>
             </div>
           </div>
         </div>
