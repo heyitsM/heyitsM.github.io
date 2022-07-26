@@ -1,3 +1,4 @@
 # heyitsM.github.io
 Personal Website
-Update to test git bash
+
+[Link to Website](https://heyitsm.github.io)
