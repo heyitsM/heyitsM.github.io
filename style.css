@@ -9,3 +9,8 @@ p {
 h1 {
   font-family: 'Merriweather', serif;
 }
+
+#center-console {
+  padding-bottom: 2vh;
+  padding-top: 1vh;
+}

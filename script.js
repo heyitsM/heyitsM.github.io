@@ -9,24 +9,24 @@ const background = document.body;
 const switch_color_mode = document.getElementById("switch");
 
 const buttons = document.getElementsByClassName("button_change");
+
 const dark_boxes = document.getElementsByClassName("card_change");
-const title = document.getElementById("h1title");
+const light_boxes = document.getElementsByClassName("card_change_light");
+const text = document.getElementsByClassName("text_changing");
 
-function goGithub() {
-  window.location.href = "https://github.com/heyitsM";
-}
+const about = document.getElementById("btn_about");
+const resume = document.getElementById("btn_resume");
+const code = document.getElementById("btn_code");
 
-function goLinkedin() {
-  window.location.href = "https://www.linkedin.com/in/emily-berger-941161207/";
-}
-
-function goEmail() {
-  window.location.href = "mailto:eberge11@jhu.edu";
-}
+const in_box = document.getElementsByClassName("warning_to_light");
 
 function goDark() {
   background.style.backgroundColor="Gray";
-  title.style.color="White";
+  //background.className="bg-"
+
+  for (let i = 0; i < text.length; i++) {
+    text[i].style.color="White";
+  }
 
   for (let k = 0; k < dark_boxes.length; k++) {
     dark_boxes[k].className="card border-light card_change";
@@ -36,12 +36,26 @@ function goDark() {
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].className="btn btn-outline-light button_change";
   }
-  
+
+  for (let i = 0; i < in_box.length; i++) {
+    in_box[i].className="btn btn-outline-light warning_to_light";
+  }
+
+  for (let i = 0; i < light_boxes.length; i++) {
+    light_boxes[i].style.backgroundColor="LightGray";
+  }
+
+  about.src="images/about_dark.svg";
+  resume.src="images/resume_dark.svg";
+  code.src="images/code_dark.svg";
 }
 
 function goLight() {
   background.style.backgroundColor="white";
-  title.style.color="Black";
+  
+  for (let i = 0; i < text.length; i++) {
+    text[i].style.color="Black";
+  }
 
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].className="btn btn-outline-dark button_change";
@@ -51,15 +65,26 @@ function goLight() {
     dark_boxes[i].className="card border-dark card_change";
     dark_boxes[i].style.backgroundColor="White";
   }
+
+  for (let i = 0; i < in_box.length; i++) {
+    in_box[i].className="btn btn-outline-warning warning_to_light";
+  }
+
+  for (let i = 0; i < light_boxes.length; i++) {
+    light_boxes[i].style.backgroundColor="White";
+  }
+
+  about.src="images/about_light.svg";
+  resume.src="images/resume_light.svg";
+  code.src="images/code_light.svg";
 }
 
 function switchLightMode() {
-  if (buttons[0].className === "btn btn-outline-dark button_change") {
+  if (dark_boxes[0].className === "card border-dark card_change") {
     goDark();
   } else {
     goLight();
   }
-
 }
 
 function showAboutMe() {
@@ -80,8 +105,4 @@ function showProjects() {
     col2.style.display = "none";
     col22.style.display = "block";
   }
-}
-
-function webPDF() {
-  alert(width.clientWidth)
 }

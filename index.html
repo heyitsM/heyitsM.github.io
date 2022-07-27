@@ -20,20 +20,26 @@
             <div class="col-1">
               <div class="form-check form-switch">
                 <input class="form-check-input" type="checkbox" role="switch" id="switch" onClick="switchLightMode()">
-                <label class="form-check-label" for="switch">Dark Mode</label>
+                <label class="form-check-label text_changing" for="switch">Dark Mode</label>
               </div>
             </div>
             <div class="col-5" style="text-align:center">
-              <h1 id="h1title">Hi, I'm Emily</h1>
+              <h1 class="text_changing">Hi, I'm Emily</h1>
             </div>
             <div class="col-2">
-              <button class="btn btn-outline-dark button_change" type="button" id="github" onclick="goGithub()">github</button>
+              <a href="https://github.com/heyitsM">
+                <button class="btn btn-outline-dark button_change" type="button" id="github">github</button>
+              </a>
             </div>
             <div class="col-2">
-              <button class="btn btn-outline-dark button_change" type="button" id="linkedin" onclick="goLinkedin()">linkedin</button>
+              <a href="https://www.linkedin.com/in/emily-berger-941161207/">
+                <button class="btn btn-outline-dark button_change" type="button" id="linkedin">linkedin</button>
+              </a>
             </div>
             <div class="col-2">
-              <button class="btn btn-outline-dark button_change" type="button" id="email" onclick = "goEmail()">email me</button>
+              <a href="mailto:eberge11@jhu.edu">
+                <button class="btn btn-outline-dark button_change" type="button" id="email">email me</button>
+              </a>
             </div>
           </div>
         </div>
@@ -44,25 +50,26 @@
       <div class="row gx-5 align-items-center">
         <div class="col-4"></div>
         <div class="col-4" id="getwidth" style="max-width:380px; min-width:240px;">
-          <div class="card border-dark" style="text-align:center">
-            Click the icons below to learn more about me and projects I've worked on.
-            <br />
+          <div class="card border-dark card_change_light" style="text-align:center" id="center-console">
+            <h6 style="padding-bottom:1vh">Click the icons below to learn more about me and projects I've worked on.</h6>
             <div id="icons">
-              <button type="button" class="btn btn-outline-light" onclick="showAboutMe()" style="color:black">
-                <img src="images/about_light.svg" alt="Button to Show About Me" style="max-width:100%">
+              <button type="button" class="btn btn-outline-warning warning_to_light" onclick="showAboutMe()" style="color:black">
+                <img src="images/about_light.svg" alt="Button to Show About Me" style="max-width:100%" id="btn_about">
                 <br />
                 About Me
               </button>
-              <button type="button" class="btn btn-outline-light" onclick="showProjects()" style="color:black">
-                <img src="images/code_light.svg" alt="Button to Show Projects" style="max-width:100%">
+              <button type="button" class="btn btn-outline-warning warning_to_light" onclick="showProjects()" style="color:black">
+                <img src="images/code_light.svg" alt="Button to Show Projects" style="max-width:100%" id="btn_code">
                 <br />
                 Projects
               </button>
-              <button type="button" class="btn btn-outline-light" onclick="webPDF()" style="color:black">
-                <img src="images/resume_light.svg" alt="Button for Sharing Documents" style="max-width:100%">
-                <br />
-                PDF Resume
-              </button>
+              <a href="https://heyitsm.github.io">
+                <button type="button" class="btn btn-outline-warning warning_to_light" style="color:black">
+                  <img src="images/resume_light.svg" alt="Button for Sharing Documents" style="max-width:100%" id="btn_resume">
+                  <br />
+                  PDF Resume
+                </button>
+              </a>
             </div>
           </div>
         </div>
@@ -75,7 +82,7 @@
         <div class="col-5" id="col1" style="display:none;">
           <div class="card border-dark text-center">
             <div class="card-header">About Me</div>
-            <div class="card-body tab-content">
+            <div class="card-body tab-content card_change_light">
               Hello, my name is Emily Berger. I'm a junior studying Computer Science and Cognitive Science at Johns Hopkins University.
               <br />
               In summer of 2022, I had the opportunity to take part in SEO Tech Developer. 
@@ -101,7 +108,7 @@
                   </li>
                 </ul>
               </div>
-              <div class="card-body tab-content">
+              <div class="card-body tab-content card_change_light">
                 <div class="tab-pane fade show active" id="project3" role="tabpanel" aria-labelledby="project3-tab">
                   Project 1 Information goes here
                 </div>
