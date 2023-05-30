@@ -29,7 +29,7 @@ const StyledBox = styled(Box)(({theme}) => ({
 export default function NavBar() {
     return (
         <StyledBox>
-            <ButtonGroup variant="outlined" aria-label="large button group" orientation="vertical">
+            <ButtonGroup style={{marginTop:'5vh'}} variant="outlined" aria-label="large button group" orientation="vertical">
                 <StyledButton href="/" startIcon={<PersonIcon />}>About Me</StyledButton>
                 <StyledButton href="/" startIcon={<RadarIcon />}>My Projects</StyledButton>
                 <StyledButton href="/" startIcon={<ArticleIcon />}>Resume</StyledButton>

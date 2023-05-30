@@ -1,13 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
-import TopBar from './components/TopBar';
-import DownloadIcon from '@mui/icons-material/Download';
-import { styled } from '@mui/material/styles';
 import { useEffect } from 'react';
-import NavBar from './components/NavBar';
-import BodyGrid from './components/BodyGrid';
+import { Routes, Route } from "react-router-dom";
+import Main from './pages/Main';
 
 const moreColors = {"Dark green":"051c00","Russian violet":"320e3b","Almond":"ebdccb","Brown":"a3320b","Mountbatten pink":"94849b"}
 
@@ -19,10 +14,9 @@ function App() {
   }, [])
 
   return (
-    <>
-      <TopBar />
-      <BodyGrid />
-    </>
+    <Routes>
+      <Route path='/' element={<Main />}></Route>
+    </Routes>
   );
 }
 
