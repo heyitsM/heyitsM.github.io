@@ -1,6 +1,5 @@
 // import { Paper, Stack } from "@mui/material";
 // import { styled } from '@mui/material/styles';
-// import { MouseParallaxContainer, MouseParallaxChild } from "react-parallax-mouse";
 
 // const Item = styled(Paper)(({ theme }) => ({
 //     // backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',

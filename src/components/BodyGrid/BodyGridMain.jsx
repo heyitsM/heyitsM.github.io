@@ -1,6 +1,5 @@
 // import { Paper, Stack } from "@mui/material";
 // import { styled } from '@mui/material/styles';
-// import { MouseParallaxContainer, MouseParallaxChild } from "react-parallax-mouse";
 import { useState, useEffect } from "react";
 import { Button } from "@mui/material";
 import { useSpring, config, useScroll, animated } from '@react-spring/web'
