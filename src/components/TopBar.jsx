@@ -12,34 +12,40 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailIcon from '@mui/icons-material/Email';
 // import Paper from '@mui/material/Paper';
+import { Link } from '@mui/material';
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
     alignItems: 'flex-start',
-    paddingTop: theme.spacing(3),
+    paddingTop: theme.spacing(2),
     // paddingBottom: theme.spacing(2),
     // Override media queries injected by theme.mixins.toolbar
     '@media all': {
     //   minHeight: '20vh',
     //   backgroundImage: 'linear-gradient(#051c00,#051c00, rgba(0,0,0,0))',
         // background: '#051c00',
-        background: 'rgba(5, 28, 0, 0)'
+        background: 'rgba(5, 28, 0, 0)',
     },
 }));
 
-const StyledTypography = styled(Typography)(({theme}) => ({
+const StyledTypography = styled(Link)(({theme}) => ({
     '@media all': {
         // color: '#EBDCCB'
         color: '#EBDCCB',
         // backgroundColor: '#EBDCCB',
-
+        textDecoration:'none',
+        
         "&:hover": {
             // borderColor:'#A3320B',
             // backgroundColor:'#A3320B',
             color: '#A3320B',
-            textDecoration: 'underline overline ', //line-through
+            textDecoration: 'line-through', //line-through
         }
     },
-}))
+}));
+
+const SubTitle = styled(Typography)(({ theme }) => ({
+    color: '#A3320B'
+}));
 
 const StyledButton = styled(Button)(({ theme }) => ({
     '@media all': {
@@ -63,19 +69,25 @@ const StyledButton = styled(Button)(({ theme }) => ({
 const StyledAppBar = styled(AppBar)(({ theme }) => ({    
     '@media all': {
       background: 'rgba(0,0,0,0)',
+      backdropFilter:'blur(1px)'
     //   zIndex:0,
     },
 }));
+
+const StyledGrid = styled(Grid)(({ theme }) => ({
+    minHeight:theme.spacing(3),
+}))
 
 export default function TopBar() {
     return (
         <Box sx={{ flexGrow: 1 }} >
             <StyledAppBar position="fixed" elevation={0}>
                 <StyledToolbar>
-                    <Grid container>
+                    <Grid container style={{alignItems:'center'}}>
                         <Grid item component="div" sx={{flexGrow:1}}>
                             <div style={{width:'fit-content'}}>
-                                <StyledTypography variant="h4">Emily Berger</StyledTypography>
+                                <StyledTypography href="/" variant="h4">Emily Berger</StyledTypography>
+                                <SubTitle variant="h6">Prospective Software Engineer</SubTitle>
                             </div>
                         </Grid>
                         <Grid item>
@@ -88,7 +100,9 @@ export default function TopBar() {
                     </Grid>
                 </StyledToolbar>
             </StyledAppBar>
-            <StyledToolbar style={{backgroundColor:'rgba(5, 28, 0, 0)'}}></StyledToolbar>
+            <StyledToolbar style={{backgroundColor:'rgba(5, 28, 0, 0)', backdropFilter:'blur(20px)'}}>
+                <div style={{backdropFilter:'blur(20px)'}}></div>
+            </StyledToolbar>
         </Box>
     );
 }

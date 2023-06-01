@@ -12,7 +12,7 @@ export default function BodyGrid(props) {
     const { active } = props;
     
     return (
-        <Grid container spacing={2} style={{minHeight:'200vh'}}>
+        <Grid container spacing={2} style={{minHeight:'91vh'}}>
             <Grid item xs={6} md={3}>
                 <NavBar button={active} />
             </Grid>

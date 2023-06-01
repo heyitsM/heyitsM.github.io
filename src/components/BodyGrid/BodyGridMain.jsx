@@ -1,9 +1,9 @@
 // import { Paper, Stack } from "@mui/material";
 // import { styled } from '@mui/material/styles';
 // import { MouseParallaxContainer, MouseParallaxChild } from "react-parallax-mouse";
-import { useState } from "react";
-import { useSpring, config, animated } from "react-spring";
+import { useState, useEffect } from "react";
 import { Button } from "@mui/material";
+import { useSpring, config, useScroll, animated } from '@react-spring/web'
 
 // const Item = styled(Paper)(({ theme }) => ({
 //     // backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -14,24 +14,22 @@ import { Button } from "@mui/material";
 // }));
 
 export default function BodyGridMain() {
-    const [showA, setShowA] = useState(true);
-
-    const fadeStyles = useSpring({
-        config: { ...config.wobbly },
-        from: { opacity: 0 },
-        to: {
-            opacity: showA ? 1 : 0
-        }
+    const { scrollYProgress } = useScroll({
+        onChange: ({ value: { scrollYProgress } }) => {
+           console.log(scrollYProgress)
+          },
+          default: {
+            immediate: true,
+          },
     });
 
-    const buttonClicked = () => {
-        setShowA(!showA);
-    }
+    useEffect(() => {
+        console.log(scrollYProgress);
+    }, [scrollYProgress])
 
     return (
         <>
-            <Button onClick={buttonClicked} variant="outlined">Click me</Button>
-            <animated.div style={fadeStyles}>Hello world!!!!!!!!!!!!!</animated.div>
+           Main
         </>
     );
 }

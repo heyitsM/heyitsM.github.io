@@ -6,6 +6,7 @@ import ArticleIcon from '@mui/icons-material/Article';
 import Box from '@mui/material/Box';
 import RadarIcon from '@mui/icons-material/Radar';
 // import { useEffect } from 'react';
+import { useSpring, config, useScroll, animated } from '@react-spring/web'
 
 const StyledButton = styled(Button)(({ theme }) => ({
     '@media all': {
@@ -56,6 +57,15 @@ export default function NavBar(props) {
     const resume = <StyledButton disableRipple href="/resume/" startIcon={<ArticleIcon />}>Resume</StyledButton>;
     const activeResume = <ActiveStyledButton disableRipple href="/resume/" startIcon={<ArticleIcon />}>Resume</ActiveStyledButton>;
 
+    const { scrollYProgress } = useScroll({
+        onChange: ({ value: { scrollYProgress } }) => {
+        //    console.log(scrollYProgress)
+          },
+          default: {
+            immediate: true,
+          },
+    });
+
     return (
         <StyledBox position="fixed" >
             <ButtonGroup style={{marginTop:'5vh'}} variant="outlined" aria-label="large button group" orientation="vertical">
@@ -63,6 +73,10 @@ export default function NavBar(props) {
                 {button === 'projects' ? activeProjects : projects}
                 {button === 'resume' ? activeResume : resume}
             </ButtonGroup>
+
+            {/* <animated.div style={{ backgroundColor: 'white', clipPath: scrollYProgress.to(val => `circle(${val * 100}%)`),}}>
+                Hello world!!!!!!!!
+            </animated.div> */}
         </StyledBox>
     );
 }
