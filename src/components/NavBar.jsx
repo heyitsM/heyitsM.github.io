@@ -48,14 +48,14 @@ const ActiveStyledButton = styled(Button)(({ theme }) => ({
 export default function NavBar(props) {
     const { button } = props;
 
-    const about = <StyledButton disableRipple href="/about/" startIcon={<PersonIcon />}>About Me</StyledButton>;
-    const activeAbout = <ActiveStyledButton disableRipple href="/about/" startIcon={<PersonIcon />}>About Me</ActiveStyledButton>;
+    const about = <StyledButton disableRipple href="/about" startIcon={<PersonIcon />}>About Me</StyledButton>;
+    const activeAbout = <ActiveStyledButton disableRipple href="/about" startIcon={<PersonIcon />}>About Me</ActiveStyledButton>;
     
-    const projects = <StyledButton disableRipple href="/projects/" startIcon={<RadarIcon />}>My Projects</StyledButton>;
-    const activeProjects = <ActiveStyledButton disableRipple href="/projects/" startIcon={<RadarIcon />}>My Projects</ActiveStyledButton>;
+    const projects = <StyledButton disableRipple href="/projects" startIcon={<RadarIcon />}>My Projects</StyledButton>;
+    const activeProjects = <ActiveStyledButton disableRipple href="/projects" startIcon={<RadarIcon />}>My Projects</ActiveStyledButton>;
     
-    const resume = <StyledButton disableRipple href="/resume/" startIcon={<ArticleIcon />}>Resume</StyledButton>;
-    const activeResume = <ActiveStyledButton disableRipple href="/resume/" startIcon={<ArticleIcon />}>Resume</ActiveStyledButton>;
+    const resume = <StyledButton disableRipple href="/resume" startIcon={<ArticleIcon />}>Resume</StyledButton>;
+    const activeResume = <ActiveStyledButton disableRipple href="/resume" startIcon={<ArticleIcon />}>Resume</ActiveStyledButton>;
 
     const { scrollYProgress } = useScroll({
         onChange: ({ value: { scrollYProgress } }) => {
