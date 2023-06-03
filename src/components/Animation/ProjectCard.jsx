@@ -50,7 +50,9 @@ export default function ProjectCard(props) {
     const flipping = (e) => {
         console.log(e);
         let classes = Array.from(e.target.classList.values())
+        console.log(classes);
         let found = classes.includes('modal-toggle') || classes.includes('modal-close') || classes.includes('MuiDialog-container');
+        found = found || classes.includes('MuiDialogActions-root') || classes.includes('MuiDialogContentText-root') || classes.includes('MuiDialogTitle-root');
         // for (let i = 0; i < classes.length; i++) {
         //     if (classes[i] === "modal-toggle" || classes[i] === "modal-close" || classes[i] === "MuiDialog-container") {
         //         found = true;
