@@ -44,7 +44,7 @@ const StyledTypography = styled(Link)(({theme}) => ({
 }));
 
 const SubTitle = styled(Typography)(({ theme }) => ({
-    color: '#A3320B'
+    color: '#A3320B',
 }));
 
 const StyledButton = styled(Button)(({ theme }) => ({
@@ -69,7 +69,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
 const StyledAppBar = styled(AppBar)(({ theme }) => ({    
     '@media all': {
       background: 'rgba(0,0,0,0)',
-      backdropFilter:'blur(1px)'
+    //   backdropFilter:'blur(3px)',
     //   zIndex:0,
     },
 }));
@@ -100,7 +100,7 @@ export default function TopBar() {
                     </Grid>
                 </StyledToolbar>
             </StyledAppBar>
-            <StyledToolbar style={{backgroundColor:'rgba(5, 28, 0, 0)', backdropFilter:'blur(20px)'}}>
+            <StyledToolbar style={{backgroundColor:'rgba(5, 28, 0, 0)'}}>
                 <div style={{backdropFilter:'blur(20px)'}}></div>
             </StyledToolbar>
         </Box>

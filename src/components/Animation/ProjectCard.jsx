@@ -1,6 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, forwardRef } from "react";
 import { useSpring, a } from '@react-spring/web'
-import { styled, Typography, Link } from "@mui/material";
+import { styled, Typography, Link, Button } from "@mui/material";
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import Slide from '@mui/material/Slide';
+import './Animation.css'
+
+const Transition = forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 const style = {width:'460px', height:'220px', display:'flex', cursor:'pointer'}
 const StyledTypography = styled(Typography)(({theme}) => ({
@@ -9,7 +20,7 @@ const StyledTypography = styled(Typography)(({theme}) => ({
     },
 }));
 
-const StyledLink = styled(Link)(({theme}) => ({
+const StyledLink = styled(Button)(({theme}) => ({
     '@media all': {
         // color: '#EBDCCB'
         color: '#EBDCCB',
@@ -27,6 +38,8 @@ const StyledLink = styled(Link)(({theme}) => ({
 
 export default function ProjectCard(props) {
     const [back, flip] = useState(false);
+    const [open, toggle] = useState(false);
+
     const { transform, opacity } = useSpring({
         opacity: back ? 1 : 0,
         transform: `perspective(600px) rotateX(${back ? 180 : 0}deg)`,
@@ -34,21 +47,59 @@ export default function ProjectCard(props) {
     })
     const { img, title, text, link } = props;
 
-    const flipping = () => {
-        flip(!back)
+    const flipping = (e) => {
+        console.log(e);
+        let classes = Array.from(e.target.classList.values())
+        let found = false;
+        for (let i = 0; i < classes.length; i++) {
+            if (classes[i] === "modal-toggle" || classes[i] === "modal-close" || classes[i] === "MuiDialog-container") {
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            flip(!back)
+        }
+    }
+
+    const handleButtonClick = (e) => {
+        toggle(!open);
+    }
+
+    const handleClose = (e) => {
+        toggle(false);
     }
 
     return (
-        <div style={style} onClick={flipping}>
-            <a.div class="back" style={{position:'absolute',  width:'460px', height:'220px', opacity: opacity.to(o => 1 - o), transform }}>
+        <div style={style} className="container" onClick={flipping}>
+            <a.div style={{position:'absolute',  width:'460px', height:'220px', opacity: opacity.to(o => 1 - o), transform }}>
                 <img src={img} alt="" style={{maxWidth:'100%', borderRadius:'4px', maxHeight:'100%'}}></img>
             </a.div>
             <a.div class="front" style={{position:'absolute', width:'460px', height:'220px', opacity, transform, rotateX: '180deg',}}>
                 <div style={{width:'460px', height:'220px', backgroundColor:'#051c00', borderRadius:'4px'}}>
                     <StyledTypography variant="h6" style={{height:'140px', padding:'20px', textOverflow: 'ellipsis', overflow: 'clip'}}>{text}</StyledTypography>
-                    <StyledLink variant="h6" href={link} style={{justifySelf:'end', float:'right', paddingRight:'20px'}}>More...</StyledLink>
+                    <StyledLink className="modal-toggle" variant="h6" onClick={handleButtonClick} style={{justifySelf:'end', float:'right', paddingRight:'20px'}}>More...</StyledLink>
                 </div>
             </a.div>
+            <Dialog
+                open={open}
+                TransitionComponent={Transition}
+                keepMounted
+                onClose={handleClose}
+                className="modal-close"
+                aria-describedby="alert-dialog-slide-description"
+            >
+                <DialogTitle>{title}</DialogTitle>
+                <DialogContent>
+                    <DialogContentText id="alert-dialog-slide-description">
+                        {text}
+                    </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={handleClose} className="modal-close">Close</Button>
+                </DialogActions>
+            </Dialog>
         </div>
     );
 }
