@@ -7,16 +7,16 @@ export default function BodyGridProjects() {
     return (
         <Grid container spacing={4}>
             <Grid item>
-                <ProjectCard img="../project/blrb1.jpg" title="BLRB" text={text} link="/" />
+                <ProjectCard img="../project/blrb1.jpg" title="BLRB" text={text} link="https://github.com/cs421sp23-homework/sp23-oose-project-team-07" />
             </Grid>
             <Grid item>
-                <ProjectCard img="../project/spterminal1.jpg" title="Spotify Terminal" text={text} link="/" />
+                <ProjectCard img="../project/spterminal1.jpg" title="Spotify Terminal" text={text} link="https://github.com/heyitsM/terminal-spotify-updated" />
             </Grid>
             <Grid item>
-                <ProjectCard img="../project/spterminal1.jpg" title="Spotify Terminal" text={text} link="/" />
+                <ProjectCard img="../project/spterminal1.jpg" title="Spotify Terminal" text={text} link="https://github.com/heyitsM/terminal-spotify-updated" />
             </Grid>
             <Grid item>
-                <ProjectCard img="../project/blrb1.jpg" title="BLRB" text={text} link="/" />
+                <ProjectCard img="../project/blrb1.jpg" title="BLRB" text={text} link="https://github.com/cs421sp23-homework/sp23-oose-project-team-07" />
             </Grid>
             
         </Grid>

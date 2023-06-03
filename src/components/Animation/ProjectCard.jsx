@@ -53,12 +53,6 @@ export default function ProjectCard(props) {
         console.log(classes);
         let found = classes.includes('modal-toggle') || classes.includes('modal-close') || classes.includes('MuiDialog-container');
         found = found || classes.includes('MuiDialogActions-root') || classes.includes('MuiDialogContentText-root') || classes.includes('MuiDialogTitle-root');
-        // for (let i = 0; i < classes.length; i++) {
-        //     if (classes[i] === "modal-toggle" || classes[i] === "modal-close" || classes[i] === "MuiDialog-container") {
-        //         found = true;
-        //         break;
-        //     }
-        // }
 
         if (!found) {
             flip(!back)
@@ -81,6 +75,7 @@ export default function ProjectCard(props) {
             <a.div class="front" style={{position:'absolute', width:'460px', height:'220px', opacity, transform, rotateX: '180deg',}}>
                 <div style={{width:'460px', height:'220px', backgroundColor:'#051c00', borderRadius:'4px'}}>
                     <StyledTypography variant="h6" style={{height:'140px', padding:'20px', textOverflow: 'ellipsis', overflow: 'clip'}}>{text}</StyledTypography>
+                    <StyledLink className="modal-close" variant="h6" href={link}>GitHub</StyledLink>
                     <StyledLink className="modal-toggle" variant="h6" onClick={handleButtonClick} style={{justifySelf:'end', float:'right', paddingRight:'20px'}}>More...</StyledLink>
                 </div>
             </a.div>
@@ -91,6 +86,7 @@ export default function ProjectCard(props) {
                 onClose={handleClose}
                 className="modal-close"
                 aria-describedby="alert-dialog-slide-description"
+                PaperProps={{style:{backgroundColor:'rgb(126, 145, 129)'}}}
             >
                 <DialogTitle>{title}</DialogTitle>
                 <DialogContent>
@@ -99,7 +95,8 @@ export default function ProjectCard(props) {
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleClose} className="modal-close">Close</Button>
+                    <StyledLink className="modal-close" variant="h6" href={link}>GitHub</StyledLink>
+                    <StyledLink onClick={handleClose} className="modal-close">Close</StyledLink>
                 </DialogActions>
             </Dialog>
         </div>
