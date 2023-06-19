@@ -4,7 +4,7 @@ import BodyGrid from "../components/BodyGrid/BodyGrid";
 export default function About() {
     return (
         <>
-            <TopBar />
+            <TopBar active="about" />
             <BodyGrid active="about" />
         </>
     );

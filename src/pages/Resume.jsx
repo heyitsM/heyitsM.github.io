@@ -4,7 +4,7 @@ import BodyGrid from "../components/BodyGrid/BodyGrid";
 export default function Resume() {
     return (
         <>
-            <TopBar />
+            <TopBar active="resume" />
             <BodyGrid active="resume" />
         </>
     );

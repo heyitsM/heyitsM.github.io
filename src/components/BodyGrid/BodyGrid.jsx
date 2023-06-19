@@ -13,10 +13,7 @@ export default function BodyGrid(props) {
     
     return (
         <Grid container spacing={2} style={{minHeight:'91vh'}}>
-            <Grid item xs={6} md={3}>
-                <NavBar button={active} />
-            </Grid>
-            <Grid item xs={6} md={9} style={{marginTop:'5vh'}}>
+            <Grid item xs={6} md={9} style={{marginTop:'10vh'}}>
                 {opts[active]}
             </Grid>
         </Grid>

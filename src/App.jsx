@@ -7,7 +7,14 @@ import About from './pages/About';
 import Resume from './pages/Resume';
 import Projects from './pages/Projects'
 import Cursor from './components/Animation/Cursor';
-// const moreColors = {"Dark green":"051c00","Russian violet":"320e3b","Almond":"ebdccb","Brown":"a3320b","Mountbatten pink":"94849b"}
+
+const colors = {
+  'raisin-black': 'rgba(39, 39, 39, 1)',
+  'mustard': 'rgba(254, 215, 102, 1)',
+  'moonstone': 'rgba(0, 159, 183, 1)',
+  'dim-gray': 'rgba(105, 103, 115, 1)',
+  'antiflash-white': 'rgba(239, 241, 243, 1)'
+}
 
 function App() {
   const ref = useRef(null)
@@ -19,8 +26,8 @@ function App() {
   }, [])
   const routes = (
     <Routes>
-        <Route path='/' element={<Main />}></Route>
-        <Route path='/about/' element={<About />}></Route>
+        <Route path='/' element={<About />}></Route>
+        {/* <Route path='/about/' element={<About />}></Route> */}
         <Route path='/resume/' element={<Resume />}></Route>
         <Route path='/projects/' element={<Projects />}></Route>
       </Routes>
